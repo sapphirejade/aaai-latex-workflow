@@ -8,12 +8,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
+        working_directory: report/
         with:          
-          path: report/
           root_file: ijcai24.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
+        working_directory: report/
         with:
-          working_directory: report/
           name: PDF
           path: ijcai24.pdf
