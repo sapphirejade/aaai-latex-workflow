@@ -9,12 +9,13 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@3.2.0          
         with:        
-          path: ./report
-          root_file: ijcai24.tex
+          root_file: |
+            - "report/ijcai24.tex"
+            - "report/ijcai24.bib"
+            - "report/ijcai24.sty"
+            - "report/named.bst"
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
-          working_directory: report/
-          work_in_root_file_dir: true
           name: PDF
           path: ijcai24.pdf
