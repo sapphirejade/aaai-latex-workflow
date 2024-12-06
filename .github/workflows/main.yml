@@ -9,7 +9,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:          
-          working_directory: report/
+          path: report/
           root_file: ijcai24.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
